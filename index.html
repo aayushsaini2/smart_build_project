@@ -1,1 +1,126 @@
-<h1>Hello Jenkins Updated</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Build Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+        }
+
+        header {
+            background: #1e293b;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 60%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .status {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .success {
+            color: #22c55e;
+        }
+
+        .fail {
+            color: #ef4444;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #3b82f6;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 10px;
+            background: #1e293b;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    🚀 Smart Build Trigger System (Jenkins + GitHub)
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+            This project demonstrates an intelligent CI pipeline that triggers builds 
+            only when critical files are modified.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Build Status</h2>
+        <p class="status success" id="statusText">✔ Build Successful</p>
+        <button onclick="toggleStatus()">Toggle Status</button>
+    </div>
+
+    <div class="card">
+        <h2>Technologies Used</h2>
+        <p>✔ Jenkins</p>
+        <p>✔ GitHub</p>
+        <p>✔ CI/CD Pipeline</p>
+    </div>
+
+</div>
+
+<footer>
+    Developed by Aayush Saini | DevOps Mini Project
+</footer>
+
+<script>
+    function toggleStatus() {
+        let status = document.getElementById("statusText");
+
+        if (status.classList.contains("success")) {
+            status.classList.remove("success");
+            status.classList.add("fail");
+            status.innerText = "✘ Build Skipped";
+        } else {
+            status.classList.remove("fail");
+            status.classList.add("success");
+            status.innerText = "✔ Build Successful";
+        }
+    }
+</script>
+
+</body>
+</html>
